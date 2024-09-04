@@ -399,8 +399,8 @@ docker_manifests:
 checksum:
   name_template: "{{ .ProjectName }}-v{{ .Version }}-SHA256SUMS"
   algorithm: sha256
-  extra_files:
-    - glob: "./observiq-otel-collector.msi"
+  # extra_files:
+  #   - glob: "./observiq-otel-collector.msi"
 
 # https://goreleaser.com/customization/sign/
 signs:
@@ -417,8 +417,8 @@ release:
   # publish to a prerelease first
   prerelease: "true"
   extra_files:
-    - glob: "./observiq-otel-collector*.msi"
-    - glob: "./observiq-otel-collector*.msi.sig"
+    # - glob: "./observiq-otel-collector*.msi"
+    # - glob: "./observiq-otel-collector*.msi.sig"
     - glob: "./scripts/install/install_unix.sh"
     - glob: "./scripts/install/install_macos.sh"
 
