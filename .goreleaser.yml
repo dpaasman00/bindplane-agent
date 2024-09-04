@@ -424,17 +424,18 @@ release:
 
 # https://goreleaser.com/customization/changelog/
 changelog:
-  use: github
-  sort: asc
-  groups:
-    - title: "New Features"
-      regexp: "^.*feat[(\\w)]*:+.*$"
-      order: 0
-    - title: "Bug Fixes"
-      regexp: "^.*fix[(\\w)]*:+.*$"
-      order: 10
-    - title: "Dependencies"
-      regexp: "^.*deps[(\\w)]*:+.*$"
-      order: 30
-    - title: Other
-      order: 999
+  disable: true
+  # use: github
+  # sort: asc
+  # groups:
+  #   - title: "New Features"
+  #     regexp: "^.*feat[(\\w)]*:+.*$"
+  #     order: 0
+  #   - title: "Bug Fixes"
+  #     regexp: "^.*fix[(\\w)]*:+.*$"
+  #     order: 10
+  #   - title: "Dependencies"
+  #     regexp: "^.*deps[(\\w)]*:+.*$"
+  #     order: 30
+  #   - title: Other
+  #     order: 999
