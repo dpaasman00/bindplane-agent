@@ -86,7 +86,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.ORG_GORELEASER_GITHUB_TOKEN }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Retrieve Windows 64-bit MSI Installer
         uses: actions/download-artifact@v4
         with:
@@ -111,7 +111,7 @@ jobs:
           version: "v2.1.0"
           args: release --clean --timeout 120m
         env:
-          GITHUB_TOKEN: ${{ secrets.ORG_GORELEASER_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
           COSIGN_PWD: ${{ secrets.ORG_COSIGN_PWD }}
       # Create artifact bundle and upload to release
@@ -134,7 +134,7 @@ jobs:
       - name: Upload artifact bundle to release
         uses: AButler/upload-release-assets@v2.0
         with:
-          repo-token: ${{ secrets.ORG_GORELEASER_GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           files: "observiq-otel-collector-${{ github.ref_name }}-artifacts.tar.gz*"
           release-tag: ${{ github.ref_name }}
       # Trigger installation tests in otel-collector-installer-testing
