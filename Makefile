@@ -72,10 +72,10 @@ reset: kill
 build-binaries: agent updater
 
 .PHONY: build-all
-build-all: build-linux build-darwin build-windows
+build-all: build-linux-amd64 build-darwin-arm64
 
 .PHONY: build-linux
-build-linux: build-linux-amd64 build-linux-arm64 build-linux-arm build-linux-ppc64 build-linux-ppc64le
+build-linux: build-linux-amd64 build-linux-arm64
 
 .PHONY: build-darwin
 build-darwin: build-darwin-amd64 build-darwin-arm64
